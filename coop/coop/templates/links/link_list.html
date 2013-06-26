@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+{% for link in object_list %}
+  <div class="row">
+      <div class="span10">
+        <h3> [{{ link.votes }}] {{ link.title }} <a href="sharenews/{{ link.id }}"><img src="{{ STATIC_URL }}/images/share.jpg" alt="Share" width="30"></a> <a href="/vote/up/{{ link.id }}"><img src="{{ STATIC_URL }}/images/upvote.png" alt="Vote UP"></a>
+        <a href="/vote/down/{{ link.id }}"><img src="{{ STATIC_URL }}/images/downvote.png" alt="Vote Down"></a></h3>
+
+      </div>
+  </div>
+  <div class="row">
+      {{ link.description|safe }}
+  </div>
+    <a href="detailnews/{{ link.id }}">Read more... </a>
+  <br/>
+<br/>
+  </li>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
+

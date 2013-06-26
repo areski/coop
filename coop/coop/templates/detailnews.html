@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <h2>{{newsobj.title}}</h2>
+
+    <p>{{newsobj.description|safe}}</p>
+</div>
+</div>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <br/>
+  <i>Add comments:</i>
+  <textarea name="text" id="" cols="60" rows="10"></textarea>
+  <button>Send Comment</button>
+  </div>
+</div>
+
+
+{% endblock %}
